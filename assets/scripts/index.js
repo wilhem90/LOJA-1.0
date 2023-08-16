@@ -1,12 +1,18 @@
 const d = document
 const main = d.querySelector('main')
+import { message, voltar } from "/assets/scripts/contacto.js";
+console.log(message(33));
+
+
+// let peso = prompt('Digite o peso: ')
+// alert(message(peso))
 
 const getHTML = (options) => {
-   let {url, success, error} = options; 
-   const xhr = new XMLHttpRequest()
-   xhr.addEventListener('readystatechange', (e) => {
+    let {url, success, error} = options; 
+    const xhr = new XMLHttpRequest()
+    xhr.addEventListener('readystatechange', (e) => {
     if (xhr.readyState === 4) return;
-
+    
     if (xhr.status === 200 && xhr.status < 300) {
         let html = xhr.responseText;
         success(html);
@@ -14,11 +20,11 @@ const getHTML = (options) => {
         let message = xhr.statusText || 'Aconteceu uma coisa errada'
         error(`Error: ${xhr.status}: ${message}`);
     }
-   })
+})
 
-   xhr.open('GET', url)
-   xhr.setRequestHeader("Content-type", "text/html; charset=utf-8")
-   xhr.send();
+xhr.open('GET', url)
+xhr.setRequestHeader("Content-type", "text/html; charset=utf-8")
+xhr.send();
 }
 
 d.addEventListener('DOMContentLoaded', (e) => {
