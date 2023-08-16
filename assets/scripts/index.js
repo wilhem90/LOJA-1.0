@@ -1,11 +1,9 @@
 const d = document
-const main = d.querySelector('main')
-import { message, voltar } from "/assets/scripts/contacto.js";
-console.log(message(33));
+const main = d.querySelector('main');
 
+import  {exo}  from "/assets/scripts/contacto.js";
+exo()
 
-// let peso = prompt('Digite o peso: ')
-// alert(message(peso))
 
 const getHTML = (options) => {
     let {url, success, error} = options; 
@@ -17,8 +15,8 @@ const getHTML = (options) => {
         let html = xhr.responseText;
         success(html);
     }else {
-        let message = xhr.statusText || 'Aconteceu uma coisa errada'
-        error(`Error: ${xhr.status}: ${message}`);
+        let message = xhr.statusText1 || 'Aconteceu uma coisa errada'
+        error(`Error ${xhr.status}: ${message}`);
     }
 })
 
