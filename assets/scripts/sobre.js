@@ -31,3 +31,6 @@ document.addEventListener('DOMContentLoaded', (e) => {
         erro: (err) => main.innerHTML = err
     });
 })
+
+
+var num = input('ok: ')
